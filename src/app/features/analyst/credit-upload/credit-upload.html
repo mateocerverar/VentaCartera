@@ -1,0 +1,35 @@
+<div class="p-6">
+    <div class="mb-6 flex justify-between items-center">
+        <div>
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Carga y Previsualización</h1>
+            <p class="text-gray-500">Arrastra tu archivo CSV o Excel con la información de la cartera a vender.</p>
+        </div>
+        <div class="flex gap-3">
+            <app-button label="Descargar Plantillas" icon="pi pi-download" [outlined]="true"
+                severity="secondary"></app-button>
+            <app-button *ngIf="uploadedData.length > 0" label="Confirmar y Cargar al Sistema" severity="primary"
+                icon="pi pi-check" (onClick)="confirmUpload()" [disabled]="isUploaded">
+            </app-button>
+        </div>
+    </div>
+
+    <app-card header="Cargar Archivo">
+        <app-file-upload mode="advanced" accept=".csv, .xlsx, .xls" chooseLabel="Seleccionar Archivo"
+            uploadLabel="Simular Previsualización" (onSelect)="onFileSelect($event)" [maxFileSize]="5000000"
+            [fileLimit]="1">
+            <div fileUploadContent
+                class="flex flex-col items-center justify-center p-8 border-2 border-dashed border-gray-300 rounded-lg bg-gray-50 text-gray-500 hover:border-primary hover:bg-green-50 transition-colors">
+                <i class="pi pi-cloud-upload text-4xl mb-3 text-primary"></i>
+                <p class="font-bold text-lg mb-1">Arrastra un archivo aquí o haz clic en Seleccionar</p>
+                <p class="text-sm">Formatos admitidos: CSV, Excel (.xls, .xlsx) - Tamaño Máximo 5MB</p>
+            </div>
+        </app-file-upload>
+    </app-card>
+
+    <div class="mt-8" *ngIf="uploadedData.length > 0">
+        <app-card header="Vista Previa de Datos (Validación)">
+            <app-table [data]="uploadedData" [columns]="tableColumns" [rows]="5" [paginator]="true">
+            </app-table>
+        </app-card>
+    </div>
+</div>

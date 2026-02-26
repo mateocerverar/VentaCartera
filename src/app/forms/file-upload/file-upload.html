@@ -1,0 +1,7 @@
+<p-fileupload name="demo[]" [mode]="mode" [chooseLabel]="chooseLabel" [uploadLabel]="uploadLabel"
+    [cancelLabel]="cancelLabel" [accept]="accept" [maxFileSize]="maxFileSize" [multiple]="multiple" [auto]="auto"
+    [fileLimit]="fileLimit" (onUpload)="handleUpload($event)" (onSelect)="handleSelect($event)">
+    <ng-template pTemplate="content">
+        <ng-content select="[fileUploadContent]"></ng-content>
+    </ng-template>
+</p-fileupload>

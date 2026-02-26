@@ -1,0 +1,17 @@
+<p-table [value]="data" [paginator]="paginator" [rows]="rows" [selectionMode]="selectionMode"
+    (onRowSelect)="handleRowSelect($event)" (onRowUnselect)="handleRowUnselect($event)">
+    <ng-template pTemplate="header">
+        <tr>
+            <th *ngFor="let col of columns">
+                {{ col.header }}
+            </th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-rowData>
+        <tr [pSelectableRow]="rowData">
+            <td *ngFor="let col of columns">
+                {{ rowData[col.field] }}
+            </td>
+        </tr>
+    </ng-template>
+</p-table>

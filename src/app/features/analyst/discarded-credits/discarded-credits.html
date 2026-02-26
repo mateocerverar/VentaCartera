@@ -1,0 +1,22 @@
+<div class="p-6">
+    <div class="mb-6">
+        <h1 class="text-3xl font-bold text-gray-900 mb-2">Gestión de Créditos Descartados</h1>
+        <p class="text-gray-500">Visualiza y descarta masivamente los créditos que no cumplen los requisitos.</p>
+    </div>
+
+    <app-card header="Listado de Descartados Temporales">
+        <div class="mb-4 text-sm text-gray-600">
+            <i class="pi pi-info-circle mr-1"></i> Selecciona los créditos que deseas eliminar definitivamente del
+            sistema.
+        </div>
+        <app-table [data]="tableData" [columns]="tableColumns" [rows]="10" [paginator]="true" selectionMode="multiple"
+            (onRowSelect)="onRowSelect($event)" (onRowUnselect)="onRowUnselect($event)">
+        </app-table>
+
+        <div class="mt-4 flex justify-content-end">
+            <app-button label="Descartar Permanentes" severity="danger" icon="pi pi-trash"
+                [disabled]="selectedCredits.length === 0" (onClick)="discardMassively()">
+            </app-button>
+        </div>
+    </app-card>
+</div>

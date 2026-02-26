@@ -1,0 +1,35 @@
+<app-topbar [title]="'Plataforma Venta Cartera'" [userName]="'Usuario Activo'"
+  (onMenuToggle)="sidebarVisible = !sidebarVisible">
+</app-topbar>
+
+<app-sidebar [(visible)]="sidebarVisible" header="Menú Principal">
+  <!-- Analyst Section -->
+  <div class="mb-4">
+    <h3 class="font-bold text-gray-500 mb-2 px-2 uppercase text-xs tracking-wider">Rol Analista</h3>
+    <a routerLink="/analyst/credit-upload" routerLinkActive="bg-green-100 text-green-800 font-bold"
+      class="block py-2 px-3 rounded hover:bg-gray-100 mb-1 text-gray-700 decoration-none transition-colors">Carga de
+      Créditos</a>
+    <a routerLink="/analyst/sales-history" routerLinkActive="bg-green-100 text-green-800 font-bold"
+      class="block py-2 px-3 rounded hover:bg-gray-100 mb-1 text-gray-700 decoration-none transition-colors">Historial
+      Ventas</a>
+    <a routerLink="/analyst/discarded-credits" routerLinkActive="bg-green-100 text-green-800 font-bold"
+      class="block py-2 px-3 rounded hover:bg-gray-100 mb-1 text-gray-700 decoration-none transition-colors">Créditos
+      Descartados</a>
+  </div>
+
+  <!-- Investor Section -->
+  <div class="mb-4 mt-6">
+    <h3 class="font-bold text-gray-500 mb-2 px-2 uppercase text-xs tracking-wider">Rol Inversionista</h3>
+    <a routerLink="/investor/purchase-selection" routerLinkActive="bg-green-100 text-green-800 font-bold"
+      class="block py-2 px-3 rounded hover:bg-gray-100 mb-1 text-gray-700 decoration-none transition-colors">Comprar
+      Cartera</a>
+    <a routerLink="/investor/purchased-portfolio" routerLinkActive="bg-green-100 text-green-800 font-bold"
+      class="block py-2 px-3 rounded hover:bg-gray-100 mb-1 text-gray-700 decoration-none transition-colors">Mi
+      Portafolio</a>
+  </div>
+</app-sidebar>
+
+<!-- Main content area -->
+<main class="bg-gray-50 min-h-screen">
+  <router-outlet></router-outlet>
+</main>

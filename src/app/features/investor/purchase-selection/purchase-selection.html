@@ -1,0 +1,143 @@
+<div class="p-6 pb-32">
+    <div class="mb-6">
+        <h1 class="text-3xl font-bold text-gray-900 mb-2">Selección y Compra de Cartera</h1>
+        <p class="text-gray-500">Explora la cartera disponible, visualiza sus documentos y selecciona cuáles adquirir.
+        </p>
+    </div>
+
+    <div class="grid">
+        <!-- Advanced Filters (Left side) -->
+        <div class="col-12 lg:col-3">
+            <app-card header="Filtros Avanzados">
+                <div class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-2">
+                        <label class="font-bold text-sm text-gray-700">Calificación</label>
+                        <p-select
+                            [options]="[{label: 'Todas', value: ''}, {label: 'AA', value: 'AA'}, {label: 'A', value: 'A'}, {label: 'B', value: 'B'}, {label: 'C', value: 'C'}]"
+                            placeholder="Seleccionar" class="w-full"></p-select>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="font-bold text-sm text-gray-700">Rango de Monto</label>
+                        <input pInputText placeholder="Mínimo" class="mb-2" />
+                        <input pInputText placeholder="Máximo" />
+                    </div>
+                    <app-button label="Aplicar Filtros" severity="secondary" [outlined]="true"
+                        class="mt-4 w-full"></app-button>
+                </div>
+            </app-card>
+        </div>
+
+        <!-- Table View (Right side) -->
+        <div class="col-12 lg:col-9">
+            <app-card header="Catálogo de Créditos Disponibles">
+                <p-table #dt [value]="portfolioData" [(selection)]="selectedCredits" dataKey="creditId"
+                    styleClass="p-datatable-sm" [tableStyle]="{'min-width': '50rem'}"
+                    [globalFilterFields]="['creditId', 'rating']">
+                    <ng-template pTemplate="caption">
+                        <div class="flex justify-end">
+                            <span class="p-input-icon-left w-full sm:w-auto">
+                                <i class="pi pi-search"></i>
+                                <input pInputText type="text" (input)="dt.filterGlobal($event.target.value, 'contains')"
+                                    placeholder="Buscar por ID o Calificación" class="w-full sm:w-auto" />
+                            </span>
+                        </div>
+                    </ng-template>
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th style="width: 4rem">
+                                <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+                            </th>
+                            <th pSortableColumn="creditId">ID de Crédito <p-sortIcon field="creditId"></p-sortIcon></th>
+                            <th pSortableColumn="rating">Calificación <p-sortIcon field="rating"></p-sortIcon></th>
+                            <th pSortableColumn="termMonths">Plazo (Meses) <p-sortIcon field="termMonths"></p-sortIcon>
+                            </th>
+                            <th pSortableColumn="expectedReturn">Retorno Estimado <p-sortIcon
+                                    field="expectedReturn"></p-sortIcon></th>
+                            <th pSortableColumn="amount">Monto Base <p-sortIcon field="amount"></p-sortIcon></th>
+                            <th class="text-center">Expediente</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-credit>
+                        <tr>
+                            <td>
+                                <p-tableCheckbox [value]="credit"></p-tableCheckbox>
+                            </td>
+                            <td class="font-medium">{{ credit.creditId }}</td>
+                            <td>{{ credit.rating }}</td>
+                            <td>{{ credit.termMonths }}</td>
+                            <td class="text-green-600 font-medium">+{{ credit.expectedReturn | currency }}</td>
+                            <td>{{ credit.amount | currency }}</td>
+                            <td class="text-center">
+                                <app-button label="Docs" icon="pi pi-file-pdf" [outlined]="true"
+                                    (onClick)="viewDocuments(credit)">
+                                </app-button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </app-card>
+        </div>
+    </div>
+
+    <p-dialog header="Documentos Adjuntos" [(visible)]="viewDocsModalVisible" [modal]="true" [style]="{ width: '50vw' }"
+        [draggable]="false" [resizable]="false">
+        <div class="flex flex-col gap-4" *ngIf="selectedCreditForDocs">
+            <h3 class="text-lg font-bold">Expediente: {{ selectedCreditForDocs.creditId }}</h3>
+            <p class="text-gray-600">Archivos adjuntos disponibles para previsualizar antes de la compra:</p>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div
+                    class="border p-4 rounded-lg flex items-center justify-between shadow-sm cursor-pointer hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <i class="pi pi-file-pdf text-red-500 text-2xl"></i>
+                        <div>
+                            <p class="font-medium text-sm">Contrato_Original.pdf</p>
+                            <p class="text-xs text-gray-400">1.2 MB</p>
+                        </div>
+                    </div>
+                    <i class="pi pi-eye text-primary"></i>
+                </div>
+                <div
+                    class="border p-4 rounded-lg flex items-center justify-between shadow-sm cursor-pointer hover:bg-gray-50 transition-colors">
+                    <div class="flex items-center gap-3">
+                        <i class="pi pi-image text-blue-500 text-2xl"></i>
+                        <div>
+                            <p class="font-medium text-sm">Identificacion.jpg</p>
+                            <p class="text-xs text-gray-400">800 KB</p>
+                        </div>
+                    </div>
+                    <i class="pi pi-eye text-primary"></i>
+                </div>
+            </div>
+        </div>
+    </p-dialog>
+
+    <!-- Summary floating bar -->
+    <div
+        class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] py-4 px-8 z-50">
+        <div class="flex items-center justify-between w-full h-full">
+            <div class="flex gap-8 items-center divide-x-2 divide-gray-100">
+                <div class="pr-8">
+                    <p class="text-sm text-gray-500 uppercase tracking-wider font-semibold mb-1">Créditos Seleccionados
+                    </p>
+                    <p class="text-2xl font-bold">{{ selectedCredits.length }}</p>
+                </div>
+                <div class="px-8">
+                    <p class="text-sm text-gray-500 uppercase tracking-wider font-semibold mb-1">Inversión Total</p>
+                    <p class="text-2xl font-bold text-primary">{{ totalInvestment | currency }}</p>
+                </div>
+                <div class="pl-8">
+                    <p class="text-sm text-gray-500 uppercase tracking-wider font-semibold mb-1">Retorno Total Estimado
+                    </p>
+                    <p class="text-2xl font-bold text-green-600">+{{ totalExpectedReturn | currency }}</p>
+                </div>
+            </div>
+
+            <div class="flex items-center">
+                <app-button label="Finalizar Compra" icon="pi pi-check-circle" severity="primary" size="large"
+                    [disabled]="selectedCredits.length === 0" (onClick)="purchase()">
+                </app-button>
+            </div>
+        </div>
+    </div>
+</div>

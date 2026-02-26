@@ -1,0 +1,3149 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "User",
+            "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
+            "file": "src/stories/user.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export interface User {\n  name: string;\n}\n",
+            "properties": [
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 172,
+            "methods": [],
+            "extends": []
+        }
+    ],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "App",
+            "id": "component-App-82c914b1949d2cfb5c123f599e91b6038779dc6a7e8d4c127828e4597d7b6699dcc4d39d3a65d6276ab67ed0fe402b8c0f03eedc8104a476b5ff95cb4b39cefc",
+            "file": "src/app/app.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./app.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "sidebarVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'VentaCartera'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "RouterOutlet"
+                },
+                {
+                    "name": "RouterLink"
+                },
+                {
+                    "name": "TopbarComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "SidebarComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { RouterOutlet, RouterLink } from '@angular/router';\r\nimport { TopbarComponent } from './layout/topbar/topbar';\r\nimport { SidebarComponent } from './layout/sidebar/sidebar';\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  standalone: true,\r\n  imports: [RouterOutlet, RouterLink, TopbarComponent, SidebarComponent],\r\n  templateUrl: './app.html',\r\n  styleUrl: './app.scss'\r\n})\r\nexport class App {\r\n  sidebarVisible: boolean = false;\r\n  title = 'VentaCartera';\r\n}\r\n",
+            "styleUrl": "./app.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<app-topbar [title]=\"'Plataforma Venta Cartera'\" [userName]=\"'Usuario Activo'\"\r\n  (onMenuToggle)=\"sidebarVisible = !sidebarVisible\">\r\n</app-topbar>\r\n\r\n<app-sidebar [(visible)]=\"sidebarVisible\" header=\"Menú Principal\">\r\n  <!-- Analyst Section -->\r\n  <div class=\"mb-4\">\r\n    <h3 class=\"font-bold text-gray-500 mb-2 px-2 uppercase text-xs tracking-wider\">Rol Analista</h3>\r\n    <a routerLink=\"/analyst/credit-upload\" routerLinkActive=\"bg-green-100 text-green-800 font-bold\"\r\n      class=\"block py-2 px-3 rounded hover:bg-gray-100 mb-1 text-gray-700 decoration-none transition-colors\">Carga de\r\n      Créditos</a>\r\n    <a routerLink=\"/analyst/sales-history\" routerLinkActive=\"bg-green-100 text-green-800 font-bold\"\r\n      class=\"block py-2 px-3 rounded hover:bg-gray-100 mb-1 text-gray-700 decoration-none transition-colors\">Historial\r\n      Ventas</a>\r\n    <a routerLink=\"/analyst/discarded-credits\" routerLinkActive=\"bg-green-100 text-green-800 font-bold\"\r\n      class=\"block py-2 px-3 rounded hover:bg-gray-100 mb-1 text-gray-700 decoration-none transition-colors\">Créditos\r\n      Descartados</a>\r\n  </div>\r\n\r\n  <!-- Investor Section -->\r\n  <div class=\"mb-4 mt-6\">\r\n    <h3 class=\"font-bold text-gray-500 mb-2 px-2 uppercase text-xs tracking-wider\">Rol Inversionista</h3>\r\n    <a routerLink=\"/investor/marketplace\" routerLinkActive=\"bg-green-100 text-green-800 font-bold\"\r\n      class=\"block py-2 px-3 rounded hover:bg-gray-100 mb-1 text-gray-700 decoration-none transition-colors\">Marketplace</a>\r\n    <a routerLink=\"/investor/purchase-selection\" routerLinkActive=\"bg-green-100 text-green-800 font-bold\"\r\n      class=\"block py-2 px-3 rounded hover:bg-gray-100 mb-1 text-gray-700 decoration-none transition-colors\">Comprar\r\n      Cartera</a>\r\n    <a routerLink=\"/investor/purchased-portfolio\" routerLinkActive=\"bg-green-100 text-green-800 font-bold\"\r\n      class=\"block py-2 px-3 rounded hover:bg-gray-100 mb-1 text-gray-700 decoration-none transition-colors\">Mi\r\n      Portafolio</a>\r\n  </div>\r\n</app-sidebar>\r\n\r\n<!-- Main content area -->\r\n<main class=\"bg-gray-50 min-h-screen\">\r\n  <router-outlet></router-outlet>\r\n</main>"
+        },
+        {
+            "name": "BadgeComponent",
+            "id": "component-BadgeComponent-b5767dd219ded34a874487b53ce8deffe18a5ecabc67837bdff9cab5c7c56c2fe4a0a1949b900fd8f6810fe535e346eafc297a8cc620a69f24c39a4a19847e0f",
+            "file": "src/app/core/badge/badge.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-badge",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./badge.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "severity",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "\"success\" | \"info\" | \"warn\" | \"danger\" | \"contrast\" | \"secondary\"",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "\"large\" | \"xlarge\"",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string | number",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "BadgeModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { BadgeModule } from 'primeng/badge';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'app-badge',\r\n  standalone: true,\r\n  imports: [CommonModule, BadgeModule],\r\n  templateUrl: './badge.html',\r\n  styleUrl: './badge.scss'\r\n})\r\nexport class BadgeComponent {\r\n  @Input() value?: string | number;\r\n  @Input() severity?: 'success' | 'info' | 'warn' | 'danger' | 'contrast' | 'secondary';\r\n  @Input() size?: 'large' | 'xlarge';\r\n}\r\n",
+            "styleUrl": "./badge.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p-badge [value]=\"value\" [severity]=\"severity\" [size]=\"size\">\r\n</p-badge>"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-d7bf0323e6da130e2609e2af0117b4a8d7cd874132206af50bf43dfc37044485fe50f2867ea76525730dd195b9b95a43802a12dadc6ad5cd7bf2faa07f19f0da",
+            "file": "src/stories/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "template": " <button  type=\"button\"\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n  {{ label }}\n</button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nWhat background color to use",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 25,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "pos": 760,
+                            "end": 773,
+                            "kind": 328,
+                            "id": 0,
+                            "flags": 16842752,
+                            "modifierFlagsCache": 0,
+                            "transformFlags": 0,
+                            "tagName": {
+                                "pos": 761,
+                                "end": 769,
+                                "kind": 80,
+                                "id": 0,
+                                "flags": 16842752,
+                                "transformFlags": 0,
+                                "escapedText": "required"
+                            },
+                            "comment": ""
+                        }
+                    ],
+                    "rawdescription": "\n\nButton contents\n\n",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 37,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nIs this the principal call to action on the page?",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 21,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nHow large should the button be?",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 29,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\nOptional click handler",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 41,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  standalone: true,\n  imports: [CommonModule],\n  template: ` <button\n  type=\"button\"\n  (click)=\"onClick.emit($event)\"\n  [ngClass]=\"classes\"\n  [ngStyle]=\"{ 'background-color': backgroundColor }\"\n>\n  {{ label }}\n</button>`,\n  styleUrls: ['./button.css'],\n})\nexport class ButtonComponent {\n  /** Is this the principal call to action on the page? */\n  @Input()\n  primary = false;\n\n  /** What background color to use */\n  @Input()\n  backgroundColor?: string;\n\n  /** How large should the button be? */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /** Optional click handler */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  display: inline-block;\n  cursor: pointer;\n  border: 0;\n  border-radius: 3em;\n  font-weight: 700;\n  line-height: 1;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n.storybook-button--primary {\n  background-color: #555ab9;\n  color: white;\n}\n.storybook-button--secondary {\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n  background-color: transparent;\n  color: #333;\n}\n.storybook-button--small {\n  padding: 10px 16px;\n  font-size: 12px;\n}\n.storybook-button--medium {\n  padding: 11px 20px;\n  font-size: 14px;\n}\n.storybook-button--large {\n  padding: 12px 24px;\n  font-size: 16px;\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 43
+                    }
+                }
+            }
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-0b78d54f16cd3a16a43a95b1d71935adee7269de272e1720713b5966e980a0ed901c5baaaf3e08d58e1bb77b1af8d8fdd534ec7160eecd55c96ed97d1314a45a-1",
+            "file": "src/app/core/button/button.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-button",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./button.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "outlined",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "rounded",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "severity",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "\"success\" | \"info\" | \"warn\" | \"danger\" | \"help\" | \"primary\" | \"secondary\" | \"contrast\"",
+                    "decorators": []
+                },
+                {
+                    "name": "size",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "\"small\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "handleClick",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ButtonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { ButtonModule } from 'primeng/button';\r\n\r\n@Component({\r\n  selector: 'app-button',\r\n  standalone: true,\r\n  imports: [CommonModule, ButtonModule],\r\n  templateUrl: './button.html',\r\n  styleUrl: './button.scss'\r\n})\r\nexport class ButtonComponent {\r\n  @Input() label: string = 'Button';\r\n  @Input() icon?: string;\r\n  @Input() severity?: 'success' | 'info' | 'warn' | 'danger' | 'help' | 'primary' | 'secondary' | 'contrast';\r\n  @Input() disabled: boolean = false;\r\n  @Input() outlined: boolean = false;\r\n  @Input() rounded: boolean = false;\r\n  @Input() size?: 'small' | 'large';\r\n\r\n  @Output() onClick = new EventEmitter<Event>();\r\n\r\n  handleClick(event: Event) {\r\n    this.onClick.emit(event);\r\n  }\r\n}\r\n",
+            "styleUrl": "./button.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "isDuplicate": true,
+            "duplicateId": 1,
+            "duplicateName": "ButtonComponent-1",
+            "templateData": "<p-button \r\n    [label]=\"label\" \r\n    [icon]=\"icon\" \r\n    [severity]=\"severity\" \r\n    [disabled]=\"disabled\" \r\n    [outlined]=\"outlined\" \r\n    [rounded]=\"rounded\"\r\n    [size]=\"size\"\r\n    (onClick)=\"handleClick($event)\">\r\n</p-button>\r\n"
+        },
+        {
+            "name": "CardComponent",
+            "id": "component-CardComponent-1f80544acbdc546f18e14c1135f1b04e4edb24aaf1155cb26866f870b0a7d0eef6bbae0af4b1c19df2a7bde69e9a96f883a2f86dbd0f72e44e8eeecdcc0a360f",
+            "file": "src/app/data/card/card.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-card",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./card.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "header",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "subheader",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "CardModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { CardModule } from 'primeng/card';\r\n\r\n@Component({\r\n  selector: 'app-card',\r\n  standalone: true,\r\n  imports: [CommonModule, CardModule],\r\n  templateUrl: './card.html',\r\n  styleUrl: './card.scss'\r\n})\r\nexport class CardComponent {\r\n  @Input() header: string = '';\r\n  @Input() subheader: string = '';\r\n}\r\n",
+            "styleUrl": "./card.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p-card [header]=\"header\" [subheader]=\"subheader\">\r\n    <ng-content></ng-content>\r\n</p-card>"
+        },
+        {
+            "name": "ChartComponent",
+            "id": "component-ChartComponent-48470530b08cf6179ca8d1fbbd8659bc75b91304faa7a24806f6f98a61315f7a5149a50d7589162ac71daf6da1200844153a353efda72b1a7b0f8c75429239a4",
+            "file": "src/app/charts/chart/chart.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-chart",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./chart.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "data",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "options",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "any",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'bar'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "\"bar\" | \"pie\" | \"line\" | \"doughnut\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ChartModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { ChartModule } from 'primeng/chart';\r\n\r\n@Component({\r\n  selector: 'app-chart',\r\n  standalone: true,\r\n  imports: [CommonModule, ChartModule],\r\n  templateUrl: './chart.html',\r\n  styleUrl: './chart.scss'\r\n})\r\nexport class ChartComponent {\r\n  @Input() type: 'bar' | 'pie' | 'line' | 'doughnut' = 'bar';\r\n  @Input() data: any;\r\n  @Input() options: any;\r\n}\r\n",
+            "styleUrl": "./chart.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p-chart [type]=\"type\" [data]=\"data\" [options]=\"options\"></p-chart>"
+        },
+        {
+            "name": "CreditUploadComponent",
+            "id": "component-CreditUploadComponent-7e7f3f13dcd9c696073f4e1a013d1600e6bac99df6aa517732fcc64e4378d05e6603fd9975d2203fcdcee6cf4c2e0aa31a326d52abdef757f90834cfde954a02",
+            "file": "src/app/features/analyst/credit-upload/credit-upload.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-credit-upload",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./credit-upload.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "isUploaded",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                },
+                {
+                    "name": "tableColumns",
+                    "defaultValue": "[\r\n    { field: 'creditId', header: 'ID de Crédito' },\r\n    { field: 'client', header: 'Cliente' },\r\n    { field: 'amount', header: 'Monto ($)' },\r\n    { field: 'daysPastDue', header: 'Días Mora' },\r\n    { field: 'status', header: 'Estado' }\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "uploadedData",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "confirmUpload",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 39,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onFileSelect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FileUploadComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "TableComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CardComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { FileUploadComponent } from '../../../forms/file-upload/file-upload';\r\nimport { TableComponent } from '../../../data/table/table';\r\nimport { ButtonComponent } from '../../../core/button/button';\r\nimport { CardComponent } from '../../../data/card/card';\r\n\r\n@Component({\r\n  selector: 'app-credit-upload',\r\n  standalone: true,\r\n  imports: [CommonModule, FileUploadComponent, TableComponent, ButtonComponent, CardComponent],\r\n  templateUrl: './credit-upload.html',\r\n  styleUrl: './credit-upload.scss'\r\n})\r\nexport class CreditUploadComponent {\r\n  uploadedData: any[] = [];\r\n  tableColumns = [\r\n    { field: 'creditId', header: 'ID de Crédito' },\r\n    { field: 'client', header: 'Cliente' },\r\n    { field: 'amount', header: 'Monto ($)' },\r\n    { field: 'daysPastDue', header: 'Días Mora' },\r\n    { field: 'status', header: 'Estado' }\r\n  ];\r\n\r\n  isUploaded: boolean = false;\r\n\r\n  onFileSelect(event: any) {\r\n    // Mock parsing file logic to generate preview data\r\n    this.uploadedData = [\r\n      { creditId: 'CR-1001', client: 'Juan Perez', amount: 5000, daysPastDue: 90, status: 'Válido' },\r\n      { creditId: 'CR-1002', client: 'Maria Gomez', amount: 15000, daysPastDue: 120, status: 'Válido' },\r\n      { creditId: 'CR-1003', client: 'Empresa SA', amount: 85000, daysPastDue: 60, status: 'Válido' },\r\n      { creditId: 'CR-1004', client: 'Felipe L', amount: 3500, daysPastDue: 180, status: 'Incompleto' },\r\n      { creditId: 'CR-1005', client: 'Marta Diaz', amount: 9200, daysPastDue: 30, status: 'Válido' }\r\n    ];\r\n    this.isUploaded = false; // reset state\r\n  }\r\n\r\n  confirmUpload() {\r\n    // Mock uploading data to server\r\n    this.isUploaded = true;\r\n    setTimeout(() => {\r\n      alert('Cartera cargada exitosamente al sistema.');\r\n      this.uploadedData = [];\r\n      this.isUploaded = false;\r\n    }, 1000);\r\n  }\r\n}\r\n",
+            "styleUrl": "./credit-upload.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"p-6\">\r\n    <div class=\"mb-6 flex justify-between items-center\">\r\n        <div>\r\n            <h1 class=\"text-3xl font-bold text-gray-900 mb-2\">Carga y Previsualización</h1>\r\n            <p class=\"text-gray-500\">Arrastra tu archivo CSV o Excel con la información de la cartera a vender.</p>\r\n        </div>\r\n        <app-button *ngIf=\"uploadedData.length > 0\" label=\"Confirmar y Cargar al Sistema\" severity=\"primary\"\r\n            icon=\"pi pi-check\" (onClick)=\"confirmUpload()\" [disabled]=\"isUploaded\">\r\n        </app-button>\r\n    </div>\r\n\r\n    <app-card header=\"Cargar Archivo\">\r\n        <app-file-upload mode=\"advanced\" accept=\".csv, .xlsx, .xls\" chooseLabel=\"Seleccionar Archivo\"\r\n            uploadLabel=\"Simular Previsualización\" (onSelect)=\"onFileSelect($event)\" [maxFileSize]=\"5000000\">\r\n        </app-file-upload>\r\n    </app-card>\r\n\r\n    <div class=\"mt-8\" *ngIf=\"uploadedData.length > 0\">\r\n        <app-card header=\"Vista Previa de Datos (Validación)\">\r\n            <app-table [data]=\"uploadedData\" [columns]=\"tableColumns\" [rows]=\"5\" [paginator]=\"true\">\r\n            </app-table>\r\n        </app-card>\r\n    </div>\r\n</div>"
+        },
+        {
+            "name": "DiscardedCreditsComponent",
+            "id": "component-DiscardedCreditsComponent-13d32a921baeb72ed578e48673a6506dd608df5346844ae1ad2aac39f4ecad543047a1b168af5bf52f879b2f1f92e315204c5e6fd274677727a47c3ef47f5698",
+            "file": "src/app/features/analyst/discarded-credits/discarded-credits.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-discarded-credits",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./discarded-credits.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "selectedCredits",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "tableColumns",
+                    "defaultValue": "[\r\n    { field: 'creditId', header: 'ID de Crédito' },\r\n    { field: 'client', header: 'Cliente' },\r\n    { field: 'amount', header: 'Monto ($)' },\r\n    { field: 'reason', header: 'Motivo de Descarte' },\r\n    { field: 'date', header: 'Fecha Evaluación' }\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "tableData",
+                    "defaultValue": "[\r\n    { creditId: 'CR-9001', client: 'Automotora XYZ', amount: 45000, reason: 'Documentación Incompleta', date: '2026-01-15' },\r\n    { creditId: 'CR-9002', client: 'Luis Torres', amount: 8000, reason: 'Score Crediticio Bajo', date: '2026-02-10' },\r\n    { creditId: 'CR-9003', client: 'Servicios Alfa', amount: 125000, reason: 'Mora mayor a 360 días', date: '2026-02-12' },\r\n    { creditId: 'CR-9004', client: 'Diana M', amount: 3200, reason: 'Fraude Sospechoso', date: '2026-02-18' }\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "discardMassively",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onRowSelect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onRowUnselect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "TableComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CardComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { TableComponent } from '../../../data/table/table';\r\nimport { ButtonComponent } from '../../../core/button/button';\r\nimport { CardComponent } from '../../../data/card/card';\r\n\r\n@Component({\r\n  selector: 'app-discarded-credits',\r\n  standalone: true,\r\n  imports: [CommonModule, TableComponent, ButtonComponent, CardComponent],\r\n  templateUrl: './discarded-credits.html',\r\n  styleUrl: './discarded-credits.scss'\r\n})\r\nexport class DiscardedCreditsComponent {\r\n  selectedCredits: any[] = [];\r\n\r\n  tableData = [\r\n    { creditId: 'CR-9001', client: 'Automotora XYZ', amount: 45000, reason: 'Documentación Incompleta', date: '2026-01-15' },\r\n    { creditId: 'CR-9002', client: 'Luis Torres', amount: 8000, reason: 'Score Crediticio Bajo', date: '2026-02-10' },\r\n    { creditId: 'CR-9003', client: 'Servicios Alfa', amount: 125000, reason: 'Mora mayor a 360 días', date: '2026-02-12' },\r\n    { creditId: 'CR-9004', client: 'Diana M', amount: 3200, reason: 'Fraude Sospechoso', date: '2026-02-18' }\r\n  ];\r\n\r\n  tableColumns = [\r\n    { field: 'creditId', header: 'ID de Crédito' },\r\n    { field: 'client', header: 'Cliente' },\r\n    { field: 'amount', header: 'Monto ($)' },\r\n    { field: 'reason', header: 'Motivo de Descarte' },\r\n    { field: 'date', header: 'Fecha Evaluación' }\r\n  ];\r\n\r\n  onRowSelect(event: any) {\r\n    if (!this.selectedCredits.includes(event.data)) {\r\n      this.selectedCredits.push(event.data);\r\n    }\r\n  }\r\n\r\n  onRowUnselect(event: any) {\r\n    this.selectedCredits = this.selectedCredits.filter(c => c.creditId !== event.data.creditId);\r\n  }\r\n\r\n  discardMassively() {\r\n    if (this.selectedCredits.length === 0) return;\r\n\r\n    alert(`Se han descartado permanentemente ${this.selectedCredits.length} créditos.`);\r\n    this.tableData = this.tableData.filter(item => !this.selectedCredits.includes(item));\r\n    this.selectedCredits = [];\r\n  }\r\n}\r\n",
+            "styleUrl": "./discarded-credits.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"p-6\">\r\n    <div class=\"mb-6 flex justify-between items-center\">\r\n        <div>\r\n            <h1 class=\"text-3xl font-bold text-gray-900 mb-2\">Gestión de Créditos Descartados</h1>\r\n            <p class=\"text-gray-500\">Visualiza y descarta masivamente los créditos que no cumplen los requisitos.</p>\r\n        </div>\r\n        <app-button label=\"Descartar Permanentes\" severity=\"danger\" icon=\"pi pi-trash\"\r\n            [disabled]=\"selectedCredits.length === 0\" (onClick)=\"discardMassively()\">\r\n        </app-button>\r\n    </div>\r\n\r\n    <app-card header=\"Listado de Descartados Temporales\">\r\n        <div class=\"mb-4 text-sm text-gray-600\">\r\n            <i class=\"pi pi-info-circle mr-1\"></i> Selecciona los créditos que deseas eliminar definitivamente del\r\n            sistema.\r\n        </div>\r\n        <app-table [data]=\"tableData\" [columns]=\"tableColumns\" [rows]=\"10\" [paginator]=\"true\" selectionMode=\"multiple\"\r\n            (onRowSelect)=\"onRowSelect($event)\" (onRowUnselect)=\"onRowUnselect($event)\">\r\n        </app-table>\r\n    </app-card>\r\n</div>"
+        },
+        {
+            "name": "DropdownComponent",
+            "id": "component-DropdownComponent-2404c21663a114361cc482ebfe41e57d08d7372de88e21a0d6a34c54ad85a2e71795400ab785cabf9015f091c8449b122c8104bfd3a59a782d833b97ddc423e6",
+            "file": "src/app/forms/dropdown/dropdown.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": ")"
+                }
+            ],
+            "selector": "app-dropdown",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./dropdown.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 25,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "optionLabel",
+                    "defaultValue": "'label'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "options",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "any[]",
+                    "decorators": []
+                },
+                {
+                    "name": "optionValue",
+                    "defaultValue": "'value'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "'Select...'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "onChange",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 29
+                },
+                {
+                    "name": "onTouch",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 30
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onModelChange",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 48,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "registerOnChange",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "registerOnTouched",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "setDisabledState",
+                    "args": [
+                        {
+                            "name": "isDisabled",
+                            "type": "boolean",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 44,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "isDisabled",
+                            "type": "boolean",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "writeValue",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "SelectModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter, forwardRef } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { SelectModule } from 'primeng/select';\r\nimport { FormsModule, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-dropdown',\r\n  standalone: true,\r\n  imports: [CommonModule, SelectModule, FormsModule],\r\n  templateUrl: './dropdown.html',\r\n  styleUrl: './dropdown.scss',\r\n  providers: [\r\n    {\r\n      provide: NG_VALUE_ACCESSOR,\r\n      useExisting: forwardRef(() => DropdownComponent),\r\n      multi: true\r\n    }\r\n  ]\r\n})\r\nexport class DropdownComponent implements ControlValueAccessor {\r\n  @Input() options: any[] = [];\r\n  @Input() optionLabel: string = 'label';\r\n  @Input() optionValue: string = 'value';\r\n  @Input() placeholder: string = 'Select...';\r\n  @Input() disabled: boolean = false;\r\n\r\n  value: any = null;\r\n\r\n  onChange: any = () => { };\r\n  onTouch: any = () => { };\r\n\r\n  writeValue(value: any): void {\r\n    this.value = value;\r\n  }\r\n\r\n  registerOnChange(fn: any): void {\r\n    this.onChange = fn;\r\n  }\r\n\r\n  registerOnTouched(fn: any): void {\r\n    this.onTouch = fn;\r\n  }\r\n\r\n  setDisabledState(isDisabled: boolean): void {\r\n    this.disabled = isDisabled;\r\n  }\r\n\r\n  onModelChange(value: any) {\r\n    this.value = value;\r\n    this.onChange(value);\r\n    this.onTouch();\r\n  }\r\n}\r\n",
+            "styleUrl": "./dropdown.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "ControlValueAccessor"
+            ],
+            "templateData": "<p-select [options]=\"options\" [ngModel]=\"value\" (ngModelChange)=\"onModelChange($event)\" [optionLabel]=\"optionLabel\"\r\n    [optionValue]=\"optionValue\" [placeholder]=\"placeholder\" [disabled]=\"disabled\" class=\"w-full\" styleClass=\"w-full\">\r\n</p-select>"
+        },
+        {
+            "name": "FileUploadComponent",
+            "id": "component-FileUploadComponent-5376bd36d7982369f07a84418d328bcfc0124eaa4d5a2f4409dda09b79b1b2c6445d2670c81d27589c63ad319374d7a03d4087f94891ccdbd6ce2cfe712d18eb",
+            "file": "src/app/forms/file-upload/file-upload.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-file-upload",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./file-upload.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "accept",
+                    "defaultValue": "'image/*'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "auto",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "cancelLabel",
+                    "defaultValue": "'Cancel'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "chooseLabel",
+                    "defaultValue": "'Choose'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "maxFileSize",
+                    "defaultValue": "1000000",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "mode",
+                    "defaultValue": "'advanced'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "\"basic\" | \"advanced\"",
+                    "decorators": []
+                },
+                {
+                    "name": "multiple",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "uploadLabel",
+                    "defaultValue": "'Upload'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onSelect",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onUpload",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "handleSelect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "handleUpload",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 25,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FileUploadModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { FileUploadModule } from 'primeng/fileupload';\r\n\r\n@Component({\r\n  selector: 'app-file-upload',\r\n  standalone: true,\r\n  imports: [CommonModule, FileUploadModule],\r\n  templateUrl: './file-upload.html',\r\n  styleUrl: './file-upload.scss'\r\n})\r\nexport class FileUploadComponent {\r\n  @Input() mode: 'basic' | 'advanced' = 'advanced';\r\n  @Input() chooseLabel: string = 'Choose';\r\n  @Input() uploadLabel: string = 'Upload';\r\n  @Input() cancelLabel: string = 'Cancel';\r\n  @Input() accept: string = 'image/*';\r\n  @Input() maxFileSize: number = 1000000;\r\n  @Input() multiple: boolean = false;\r\n  @Input() auto: boolean = false;\r\n\r\n  @Output() onUpload = new EventEmitter<any>();\r\n  @Output() onSelect = new EventEmitter<any>();\r\n\r\n  handleUpload(event: any) {\r\n    this.onUpload.emit(event);\r\n  }\r\n\r\n  handleSelect(event: any) {\r\n    this.onSelect.emit(event);\r\n  }\r\n}\r\n",
+            "styleUrl": "./file-upload.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p-fileupload name=\"demo[]\" [mode]=\"mode\" [chooseLabel]=\"chooseLabel\" [uploadLabel]=\"uploadLabel\"\r\n    [cancelLabel]=\"cancelLabel\" [accept]=\"accept\" [maxFileSize]=\"maxFileSize\" [multiple]=\"multiple\" [auto]=\"auto\"\r\n    (onUpload)=\"handleUpload($event)\" (onSelect)=\"handleSelect($event)\">\r\n</p-fileupload>"
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-48b9abe37706bc42f20cfa97ed9f943678344ea7d254c0c82183c657750c2191b43486fe730c778627b2ea6aa0e2f33a7abcf3ce08b68ad18b062ad99ea97acb",
+            "file": "src/stories/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>  <div class=\"storybook-header\">\n    <div>\n      <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n            fill=\"#FFF\"\n          />\n          <path\n            d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n            fill=\"#555AB9\"\n          />\n          <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n        </g>\n      </svg>\n      <h1>Acme</h1>\n    </div>\n    <div>\n      <div *ngIf=\"user\">\n        <span class=\"welcome\">\n          Welcome, <b>{{ user.name }}</b\n          >!\n        </span>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n      </div>\n      <div *ngIf=\"!user\">\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          class=\"margin-left\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          [primary]=\"true\"\n          class=\"margin-left\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </div>\n</header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 66,
+                    "type": "User | null",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 75,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 69,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 72,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { ButtonComponent } from './button.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-header',\n  standalone: true,\n  imports: [CommonModule, ButtonComponent],\n  template: `<header>\n  <div class=\"storybook-header\">\n    <div>\n      <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n            fill=\"#FFF\"\n          />\n          <path\n            d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n            fill=\"#555AB9\"\n          />\n          <path d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\" fill=\"#91BAF8\" />\n        </g>\n      </svg>\n      <h1>Acme</h1>\n    </div>\n    <div>\n      <div *ngIf=\"user\">\n        <span class=\"welcome\">\n          Welcome, <b>{{ user.name }}</b\n          >!\n        </span>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n      </div>\n      <div *ngIf=\"!user\">\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          class=\"margin-left\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          [primary]=\"true\"\n          class=\"margin-left\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </div>\n</header>`,\n  styleUrls: ['./header.css'],\n})\nexport class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n.storybook-header svg {\n  display: inline-block;\n  vertical-align: top;\n}\n\n.storybook-header h1 {\n  display: inline-block;\n  vertical-align: top;\n  margin: 6px 0 6px 10px;\n  font-weight: 700;\n  font-size: 20px;\n  line-height: 1;\n}\n\n.storybook-header button + button {\n  margin-left: 10px;\n}\n\n.storybook-header .welcome {\n  margin-right: 10px;\n  color: #333;\n  font-size: 14px;\n}\n",
+                    "styleUrl": "./header.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "InputTextComponent",
+            "id": "component-InputTextComponent-6faad1fe92c7772db1ef83b1411a954a22f0d2044b15afcf6da624a1252addd323417bed67035c7b55da0f64ca4122e974acf1c95587f4817fbe563d704ba681",
+            "file": "src/app/forms/input-text/input-text.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": ")"
+                }
+            ],
+            "selector": "app-input-text",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./input-text.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 22,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'text'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "onChange",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                },
+                {
+                    "name": "onTouch",
+                    "defaultValue": "() => {...}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 28
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onModelChange",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 46,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "string",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "registerOnChange",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "registerOnTouched",
+                    "args": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "fn",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "setDisabledState",
+                    "args": [
+                        {
+                            "name": "isDisabled",
+                            "type": "boolean",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "isDisabled",
+                            "type": "boolean",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "writeValue",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 30,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "InputTextModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter, forwardRef } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { InputTextModule } from 'primeng/inputtext';\r\nimport { FormsModule, NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';\r\n\r\n@Component({\r\n  selector: 'app-input-text',\r\n  standalone: true,\r\n  imports: [CommonModule, InputTextModule, FormsModule],\r\n  templateUrl: './input-text.html',\r\n  styleUrl: './input-text.scss',\r\n  providers: [\r\n    {\r\n      provide: NG_VALUE_ACCESSOR,\r\n      useExisting: forwardRef(() => InputTextComponent),\r\n      multi: true\r\n    }\r\n  ]\r\n})\r\nexport class InputTextComponent implements ControlValueAccessor {\r\n  @Input() placeholder: string = '';\r\n  @Input() disabled: boolean = false;\r\n  @Input() type: string = 'text';\r\n\r\n  value: string = '';\r\n\r\n  onChange: any = () => { };\r\n  onTouch: any = () => { };\r\n\r\n  writeValue(value: any): void {\r\n    this.value = value;\r\n  }\r\n\r\n  registerOnChange(fn: any): void {\r\n    this.onChange = fn;\r\n  }\r\n\r\n  registerOnTouched(fn: any): void {\r\n    this.onTouch = fn;\r\n  }\r\n\r\n  setDisabledState(isDisabled: boolean): void {\r\n    this.disabled = isDisabled;\r\n  }\r\n\r\n  onModelChange(value: string) {\r\n    this.value = value;\r\n    this.onChange(value);\r\n    this.onTouch();\r\n  }\r\n}\r\n",
+            "styleUrl": "./input-text.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "ControlValueAccessor"
+            ],
+            "templateData": "<input pInputText [type]=\"type\" [placeholder]=\"placeholder\" [disabled]=\"disabled\" [ngModel]=\"value\"\r\n    (ngModelChange)=\"onModelChange($event)\" class=\"w-full\" />"
+        },
+        {
+            "name": "MarketplaceComponent",
+            "id": "component-MarketplaceComponent-69e9274e7e513a61ee899e25782f9c5d3e4b5d3bb0cd3ee8629f9fd16ebc29d74209719b23ff09c5a23e9f3acc97383105aa34bfe5c2e87cbeae4ad57a7d8b80",
+            "file": "src/app/features/investor/marketplace/marketplace.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-marketplace",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./marketplace.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "marketplaceData",
+                    "defaultValue": "[\r\n    { creditId: 'CR-MK-001', expectedReturn: '12%', amount: 50000, rating: 'A', risk: 'Bajo' },\r\n    { creditId: 'CR-MK-002', expectedReturn: '15%', amount: 150000, rating: 'B', risk: 'Medio' },\r\n    { creditId: 'CR-MK-003', expectedReturn: '9%', amount: 25000, rating: 'AA', risk: 'Muy Bajo' },\r\n    { creditId: 'CR-MK-004', expectedReturn: '18%', amount: 75000, rating: 'C', risk: 'Alto' }\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "selectedCreditForDocs",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "tableColumns",
+                    "defaultValue": "[\r\n    { field: 'creditId', header: 'ID de Crédito' },\r\n    { field: 'expectedReturn', header: 'Retorno Esperado (%)' },\r\n    { field: 'amount', header: 'Monto Inversión ($)' },\r\n    { field: 'rating', header: 'Calificación' },\r\n    { field: 'risk', header: 'Nivel Riesgo' }\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                },
+                {
+                    "name": "viewDocsModalVisible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "viewDocuments",
+                    "args": [
+                        {
+                            "name": "credit",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 35,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "credit",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "TableComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CardComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "DialogModule",
+                    "type": "module"
+                },
+                {
+                    "name": "TagComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { TableComponent } from '../../../data/table/table';\r\nimport { ButtonComponent } from '../../../core/button/button';\r\nimport { CardComponent } from '../../../data/card/card';\r\nimport { DialogModule } from 'primeng/dialog';\r\nimport { TagComponent } from '../../../core/tag/tag';\r\n\r\n@Component({\r\n  selector: 'app-marketplace',\r\n  standalone: true,\r\n  imports: [CommonModule, TableComponent, ButtonComponent, CardComponent, DialogModule, TagComponent],\r\n  templateUrl: './marketplace.html',\r\n  styleUrl: './marketplace.scss'\r\n})\r\nexport class MarketplaceComponent {\r\n  viewDocsModalVisible: boolean = false;\r\n  selectedCreditForDocs: any = null;\r\n\r\n  marketplaceData = [\r\n    { creditId: 'CR-MK-001', expectedReturn: '12%', amount: 50000, rating: 'A', risk: 'Bajo' },\r\n    { creditId: 'CR-MK-002', expectedReturn: '15%', amount: 150000, rating: 'B', risk: 'Medio' },\r\n    { creditId: 'CR-MK-003', expectedReturn: '9%', amount: 25000, rating: 'AA', risk: 'Muy Bajo' },\r\n    { creditId: 'CR-MK-004', expectedReturn: '18%', amount: 75000, rating: 'C', risk: 'Alto' }\r\n  ];\r\n\r\n  tableColumns = [\r\n    { field: 'creditId', header: 'ID de Crédito' },\r\n    { field: 'expectedReturn', header: 'Retorno Esperado (%)' },\r\n    { field: 'amount', header: 'Monto Inversión ($)' },\r\n    { field: 'rating', header: 'Calificación' },\r\n    { field: 'risk', header: 'Nivel Riesgo' }\r\n  ];\r\n\r\n  viewDocuments(credit: any) {\r\n    this.selectedCreditForDocs = credit;\r\n    this.viewDocsModalVisible = true;\r\n  }\r\n}\r\n",
+            "styleUrl": "./marketplace.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<div class=\"p-6\">\r\n    <div class=\"mb-6\">\r\n        <h1 class=\"text-3xl font-bold text-gray-900 mb-2\">Marketplace de Créditos</h1>\r\n        <p class=\"text-gray-500\">Explora la cartera de créditos disponibles para adquirir e invierte.</p>\r\n    </div>\r\n\r\n    <app-card header=\"Catálogo Disponible\">\r\n        <app-table [data]=\"marketplaceData\" [columns]=\"tableColumns\" [rows]=\"10\" [paginator]=\"true\">\r\n            <ng-template pTemplate=\"body\" let-rowData>\r\n                <tr>\r\n                    <td>{{ rowData.creditId }}</td>\r\n                    <td>{{ rowData.expectedReturn }}</td>\r\n                    <td>{{ rowData.amount | currency }}</td>\r\n                    <td>\r\n                        <app-tag [value]=\"rowData.rating\"\r\n                            [severity]=\"rowData.rating === 'AA' || rowData.rating === 'A' ? 'success' : 'warn'\"></app-tag>\r\n                    </td>\r\n                    <td>{{ rowData.risk }}</td>\r\n                    <td class=\"text-right\">\r\n                        <app-button label=\"Ver Docs\" icon=\"pi pi-file-pdf\" [outlined]=\"true\"\r\n                            (onClick)=\"viewDocuments(rowData)\">\r\n                        </app-button>\r\n                    </td>\r\n                </tr>\r\n            </ng-template>\r\n        </app-table>\r\n    </app-card>\r\n\r\n    <p-dialog header=\"Documentos Adjuntos\" [(visible)]=\"viewDocsModalVisible\" [modal]=\"true\" [style]=\"{ width: '50vw' }\"\r\n        [draggable]=\"false\" [resizable]=\"false\">\r\n\r\n        <div class=\"flex flex-col gap-4\" *ngIf=\"selectedCreditForDocs\">\r\n            <h3 class=\"text-lg font-bold\">Expediente: {{ selectedCreditForDocs.creditId }}</h3>\r\n            <p class=\"text-gray-600\">Archivos adjuntos disponibles para previsualizar antes de la compra:</p>\r\n\r\n            <div class=\"grid grid-cols-2 gap-4\">\r\n                <div\r\n                    class=\"border p-4 rounded-lg flex items-center justify-between shadow-sm cursor-pointer hover:bg-gray-50\">\r\n                    <div class=\"flex items-center gap-3\">\r\n                        <i class=\"pi pi-file-pdf text-red-500 text-2xl\"></i>\r\n                        <div>\r\n                            <p class=\"font-medium\">Contrato_Original.pdf</p>\r\n                            <p class=\"text-xs text-gray-400\">1.2 MB</p>\r\n                        </div>\r\n                    </div>\r\n                    <i class=\"pi pi-eye text-primary\"></i>\r\n                </div>\r\n\r\n                <div\r\n                    class=\"border p-4 rounded-lg flex items-center justify-between shadow-sm cursor-pointer hover:bg-gray-50\">\r\n                    <div class=\"flex items-center gap-3\">\r\n                        <i class=\"pi pi-image text-blue-500 text-2xl\"></i>\r\n                        <div>\r\n                            <p class=\"font-medium\">Identificacion.jpg</p>\r\n                            <p class=\"text-xs text-gray-400\">800 KB</p>\r\n                        </div>\r\n                    </div>\r\n                    <i class=\"pi pi-eye text-primary\"></i>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </p-dialog>\r\n</div>"
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-21dd6eb370b4983b5c21c84d40e6f54d266a9d9af9889e6e76b35c43058bd53b3e451bad089d5adf4bea46647ba10265a2fa8cb15630398e75636307d4817fc6",
+            "file": "src/stories/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page",
+            "styleUrls": [
+                "./page.css"
+            ],
+            "styles": [],
+            "template": "<article>  <storybook-header\n    [user]=\"user\"\n    (onLogout)=\"doLogout()\"\n    (onLogin)=\"doLogin()\"\n    (onCreateAccount)=\"doCreateAccount()\"\n  ></storybook-header>\n  <section class=\"storybook-page\">\n    <h2>Pages in Storybook</h2>\n    <p>\n      We recommend building UIs with a\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <strong>component-driven</strong>\n      </a>\n      process starting with atomic components and ending with pages.\n    </p>\n    <p>\n      Render pages with mock data. This makes it easy to build and review page states without\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\n      in Storybook:\n    </p>\n    <ul>\n      <li>\n        Use a higher-level connected component. Storybook helps you compose such data from the\n        \"args\" of child component stories\n      </li>\n      <li>\n        Assemble data in the page component from your services. You can mock these services out\n        using Storybook.\n      </li>\n    </ul>\n    <p>\n      Get a guided tutorial on component-driven development at\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Storybook tutorials\n      </a>\n      . Read more in the\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n      .\n    </p>\n    <div class=\"tip-wrapper\">\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n            id=\"a\"\n            fill=\"#999\"\n          />\n        </g>\n      </svg>\n      Viewports addon in the toolbar\n    </div>\n  </section>\n</article>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "User | null",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 69
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "doCreateAccount",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 79,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogin",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 75,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "doLogout",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 71,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "HeaderComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport { HeaderComponent } from './header.component';\nimport type { User } from './user';\n\n@Component({\n  selector: 'storybook-page',\n  standalone: true,\n  imports: [CommonModule, HeaderComponent],\n  template: `<article>\n  <storybook-header\n    [user]=\"user\"\n    (onLogout)=\"doLogout()\"\n    (onLogin)=\"doLogin()\"\n    (onCreateAccount)=\"doCreateAccount()\"\n  ></storybook-header>\n  <section class=\"storybook-page\">\n    <h2>Pages in Storybook</h2>\n    <p>\n      We recommend building UIs with a\n      <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <strong>component-driven</strong>\n      </a>\n      process starting with atomic components and ending with pages.\n    </p>\n    <p>\n      Render pages with mock data. This makes it easy to build and review page states without\n      needing to navigate to them in your app. Here are some handy patterns for managing page data\n      in Storybook:\n    </p>\n    <ul>\n      <li>\n        Use a higher-level connected component. Storybook helps you compose such data from the\n        \"args\" of child component stories\n      </li>\n      <li>\n        Assemble data in the page component from your services. You can mock these services out\n        using Storybook.\n      </li>\n    </ul>\n    <p>\n      Get a guided tutorial on component-driven development at\n      <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n        Storybook tutorials\n      </a>\n      . Read more in the\n      <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n      .\n    </p>\n    <div class=\"tip-wrapper\">\n      <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n      <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n        <g fill=\"none\" fillRule=\"evenodd\">\n          <path\n            d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n            id=\"a\"\n            fill=\"#999\"\n          />\n        </g>\n      </svg>\n      Viewports addon in the toolbar\n    </div>\n  </section>\n</article>`,\n  styleUrls: ['./page.css'],\n})\nexport class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-page {\n  margin: 0 auto;\n  padding: 48px 20px;\n  max-width: 600px;\n  color: #333;\n  font-size: 14px;\n  line-height: 24px;\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n}\n\n.storybook-page h2 {\n  display: inline-block;\n  vertical-align: top;\n  margin: 0 0 4px;\n  font-weight: 700;\n  font-size: 32px;\n  line-height: 1;\n}\n\n.storybook-page p {\n  margin: 1em 0;\n}\n\n.storybook-page a {\n  color: inherit;\n}\n\n.storybook-page ul {\n  margin: 1em 0;\n  padding-left: 30px;\n}\n\n.storybook-page li {\n  margin-bottom: 8px;\n}\n\n.storybook-page .tip {\n  display: inline-block;\n  vertical-align: top;\n  margin-right: 10px;\n  border-radius: 1em;\n  background: #e7fdd8;\n  padding: 4px 12px;\n  color: #357a14;\n  font-weight: 700;\n  font-size: 11px;\n  line-height: 12px;\n}\n\n.storybook-page .tip-wrapper {\n  margin-top: 40px;\n  margin-bottom: 40px;\n  font-size: 13px;\n  line-height: 20px;\n}\n\n.storybook-page .tip-wrapper svg {\n  display: inline-block;\n  vertical-align: top;\n  margin-top: 3px;\n  margin-right: 4px;\n  width: 12px;\n  height: 12px;\n}\n\n.storybook-page .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "styleUrl": "./page.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "PurchasedPortfolioComponent",
+            "id": "component-PurchasedPortfolioComponent-ce7fecefd11bbe404c1f5411d14b7a1ec66328af5781b1bd8d730aafbabc81d186064c0f7f09ffad8d5120279b4cf59588d6857ab4b361d0fa9fa5d148036636",
+            "file": "src/app/features/investor/purchased-portfolio/purchased-portfolio.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-purchased-portfolio",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./purchased-portfolio.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "chartOptions",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "performanceData",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "portfolioTable",
+                    "defaultValue": "[\r\n    { creditId: 'CR-MK-901', purchaseDate: '2026-01-10', amount: 35000, currentReturn: 1200, status: 'Al Día' },\r\n    { creditId: 'CR-MK-902', purchaseDate: '2026-02-05', amount: 80000, currentReturn: 450, status: 'Al Día' },\r\n    { creditId: 'CR-MK-855', purchaseDate: '2025-11-20', amount: 15000, currentReturn: 2100, status: 'Mora 30 días' }\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                },
+                {
+                    "name": "tableColumns",
+                    "defaultValue": "[\r\n    { field: 'creditId', header: 'ID de Crédito' },\r\n    { field: 'purchaseDate', header: 'Fecha de Compra' },\r\n    { field: 'amount', header: 'Inversión Inicial ($)' },\r\n    { field: 'currentReturn', header: 'Retorno Generado ($)' },\r\n    { field: 'status', header: 'Estado Actual' }\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ChartComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CardComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "TableComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { ChartComponent } from '../../../charts/chart/chart';\r\nimport { CardComponent } from '../../../data/card/card';\r\nimport { TableComponent } from '../../../data/table/table';\r\n\r\n@Component({\r\n  selector: 'app-purchased-portfolio',\r\n  standalone: true,\r\n  imports: [CommonModule, ChartComponent, CardComponent, TableComponent],\r\n  templateUrl: './purchased-portfolio.html',\r\n  styleUrl: './purchased-portfolio.scss'\r\n})\r\nexport class PurchasedPortfolioComponent implements OnInit {\r\n  performanceData: any;\r\n  chartOptions: any;\r\n\r\n  portfolioTable = [\r\n    { creditId: 'CR-MK-901', purchaseDate: '2026-01-10', amount: 35000, currentReturn: 1200, status: 'Al Día' },\r\n    { creditId: 'CR-MK-902', purchaseDate: '2026-02-05', amount: 80000, currentReturn: 450, status: 'Al Día' },\r\n    { creditId: 'CR-MK-855', purchaseDate: '2025-11-20', amount: 15000, currentReturn: 2100, status: 'Mora 30 días' }\r\n  ];\r\n\r\n  tableColumns = [\r\n    { field: 'creditId', header: 'ID de Crédito' },\r\n    { field: 'purchaseDate', header: 'Fecha de Compra' },\r\n    { field: 'amount', header: 'Inversión Inicial ($)' },\r\n    { field: 'currentReturn', header: 'Retorno Generado ($)' },\r\n    { field: 'status', header: 'Estado Actual' }\r\n  ];\r\n\r\n  ngOnInit() {\r\n    this.performanceData = {\r\n      labels: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun'],\r\n      datasets: [\r\n        {\r\n          label: 'Rendimiento Acumulado ($)',\r\n          data: [1200, 2500, 4100, 6000, 8500, 11200],\r\n          fill: true,\r\n          borderColor: '#80B828',\r\n          backgroundColor: 'rgba(128, 184, 40, 0.2)',\r\n          tension: 0.4\r\n        }\r\n      ]\r\n    };\r\n\r\n    this.chartOptions = {\r\n      responsive: true,\r\n      maintainAspectRatio: false,\r\n      plugins: {\r\n        legend: { position: 'top' }\r\n      }\r\n    };\r\n  }\r\n}\r\n",
+            "styleUrl": "./purchased-portfolio.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"p-6\">\r\n    <div class=\"mb-6 flex justify-between items-center\">\r\n        <div>\r\n            <h1 class=\"text-3xl font-bold text-gray-900 mb-2\">Mi Portafolio</h1>\r\n            <p class=\"text-gray-500\">Rendimiento y estado actual de los créditos adquiridos.</p>\r\n        </div>\r\n\r\n        <div class=\"flex gap-6 text-right\">\r\n            <div>\r\n                <p class=\"text-sm text-gray-500\">Total Invertido</p>\r\n                <p class=\"text-2xl font-bold\">$130,000.00</p>\r\n            </div>\r\n            <div>\r\n                <p class=\"text-sm text-gray-500\">Retorno Actual</p>\r\n                <p class=\"text-2xl font-bold text-green-600\">+$3,750.00</p>\r\n            </div>\r\n        </div>\r\n    </div>\r\n\r\n    <app-card header=\"Evolución del Rendimiento\" class=\"mb-8 block\">\r\n        <div style=\"height: 350px\">\r\n            <app-chart type=\"line\" [data]=\"performanceData\" [options]=\"chartOptions\"></app-chart>\r\n        </div>\r\n    </app-card>\r\n\r\n    <app-card header=\"Desglose de Créditos Activos\">\r\n        <app-table [data]=\"portfolioTable\" [columns]=\"tableColumns\" [paginator]=\"true\" [rows]=\"5\">\r\n        </app-table>\r\n    </app-card>\r\n</div>"
+        },
+        {
+            "name": "PurchaseSelectionComponent",
+            "id": "component-PurchaseSelectionComponent-b211feb3563c3e872915bf7da8a9ee970fb30180dc2efa12ed0679c4276b649c8870399ec984117fef44e689a05c48b8b4592553602aedb57ba8c88b8f249665",
+            "file": "src/app/features/investor/purchase-selection/purchase-selection.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-purchase-selection",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./purchase-selection.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "portfolioData",
+                    "defaultValue": "[\r\n    { creditId: 'CR-MK-001', amount: 50000, expectedReturn: 6000, termMonths: 12, rating: 'A' },\r\n    { creditId: 'CR-MK-002', amount: 150000, expectedReturn: 22500, termMonths: 24, rating: 'B' },\r\n    { creditId: 'CR-MK-003', amount: 25000, expectedReturn: 2250, termMonths: 6, rating: 'AA' },\r\n    { creditId: 'CR-MK-004', amount: 75000, expectedReturn: 13500, termMonths: 18, rating: 'C' }\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 17
+                },
+                {
+                    "name": "selectedCredits",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "purchase",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "TableModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CardComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { TableModule } from 'primeng/table';\r\nimport { ButtonComponent } from '../../../core/button/button';\r\nimport { CardComponent } from '../../../data/card/card';\r\n\r\n@Component({\r\n  selector: 'app-purchase-selection',\r\n  standalone: true,\r\n  imports: [CommonModule, TableModule, ButtonComponent, CardComponent],\r\n  templateUrl: './purchase-selection.html',\r\n  styleUrl: './purchase-selection.scss'\r\n})\r\nexport class PurchaseSelectionComponent {\r\n  selectedCredits: any[] = [];\r\n\r\n  portfolioData = [\r\n    { creditId: 'CR-MK-001', amount: 50000, expectedReturn: 6000, termMonths: 12, rating: 'A' },\r\n    { creditId: 'CR-MK-002', amount: 150000, expectedReturn: 22500, termMonths: 24, rating: 'B' },\r\n    { creditId: 'CR-MK-003', amount: 25000, expectedReturn: 2250, termMonths: 6, rating: 'AA' },\r\n    { creditId: 'CR-MK-004', amount: 75000, expectedReturn: 13500, termMonths: 18, rating: 'C' }\r\n  ];\r\n\r\n  get totalInvestment() {\r\n    return this.selectedCredits.reduce((sum, item) => sum + item.amount, 0);\r\n  }\r\n\r\n  get totalExpectedReturn() {\r\n    return this.selectedCredits.reduce((sum, item) => sum + item.expectedReturn, 0);\r\n  }\r\n\r\n  purchase() {\r\n    if (this.selectedCredits.length === 0) return;\r\n    alert(`Compra de ${this.selectedCredits.length} créditos completada por un total de $${this.totalInvestment}.`);\r\n    this.portfolioData = this.portfolioData.filter(item => !this.selectedCredits.includes(item));\r\n    this.selectedCredits = [];\r\n  }\r\n}\r\n",
+            "styleUrl": "./purchase-selection.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "accessors": {
+                "totalInvestment": {
+                    "name": "totalInvestment",
+                    "getSignature": {
+                        "name": "totalInvestment",
+                        "type": "",
+                        "returnType": "",
+                        "line": 24
+                    }
+                },
+                "totalExpectedReturn": {
+                    "name": "totalExpectedReturn",
+                    "getSignature": {
+                        "name": "totalExpectedReturn",
+                        "type": "",
+                        "returnType": "",
+                        "line": 28
+                    }
+                }
+            },
+            "templateData": "<div class=\"p-6 pb-32\">\r\n    <div class=\"mb-6\">\r\n        <h1 class=\"text-3xl font-bold text-gray-900 mb-2\">Selección y Compra</h1>\r\n        <p class=\"text-gray-500\">Selecciona los créditos que deseas adquirir para armar tu paquete de compra.</p>\r\n    </div>\r\n\r\n    <app-card header=\"Armar Paquete\">\r\n        <p-table [value]=\"portfolioData\" [(selection)]=\"selectedCredits\" dataKey=\"creditId\" styleClass=\"p-datatable-sm\"\r\n            [tableStyle]=\"{'min-width': '50rem'}\">\r\n            <ng-template pTemplate=\"header\">\r\n                <tr>\r\n                    <th style=\"width: 4rem\">\r\n                        <p-tableHeaderCheckbox></p-tableHeaderCheckbox>\r\n                    </th>\r\n                    <th>ID de Crédito</th>\r\n                    <th>Calificación</th>\r\n                    <th>Plazo (Meses)</th>\r\n                    <th>Retorno Estimado</th>\r\n                    <th>Monto Base</th>\r\n                </tr>\r\n            </ng-template>\r\n            <ng-template pTemplate=\"body\" let-credit>\r\n                <tr>\r\n                    <td>\r\n                        <p-tableCheckbox [value]=\"credit\"></p-tableCheckbox>\r\n                    </td>\r\n                    <td class=\"font-medium\">{{ credit.creditId }}</td>\r\n                    <td>{{ credit.rating }}</td>\r\n                    <td>{{ credit.termMonths }}</td>\r\n                    <td class=\"text-green-600 font-medium\">+{{ credit.expectedReturn | currency }}</td>\r\n                    <td>{{ credit.amount | currency }}</td>\r\n                </tr>\r\n            </ng-template>\r\n        </p-table>\r\n    </app-card>\r\n\r\n    <!-- Summary floating bar -->\r\n    <div\r\n        class=\"fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-lg p-4 flex items-center justify-between px-8 z-50\">\r\n        <div class=\"flex gap-8\">\r\n            <div>\r\n                <p class=\"text-sm text-gray-500\">Créditos Seleccionados</p>\r\n                <p class=\"text-xl font-bold\">{{ selectedCredits.length }}</p>\r\n            </div>\r\n            <div>\r\n                <p class=\"text-sm text-gray-500\">Inversión Total</p>\r\n                <p class=\"text-xl font-bold text-primary\">{{ totalInvestment | currency }}</p>\r\n            </div>\r\n            <div>\r\n                <p class=\"text-sm text-gray-500\">Retorno Total Estimado</p>\r\n                <p class=\"text-xl font-bold text-green-600\">{{ totalExpectedReturn | currency }}</p>\r\n            </div>\r\n        </div>\r\n\r\n        <app-button label=\"Finalizar Compra\" icon=\"pi pi-check-circle\" severity=\"primary\"\r\n            [disabled]=\"selectedCredits.length === 0\" (onClick)=\"purchase()\">\r\n        </app-button>\r\n    </div>\r\n</div>"
+        },
+        {
+            "name": "SalesHistoryComponent",
+            "id": "component-SalesHistoryComponent-f6c86d0549b8560f257bac4af6acb89302d67b516f2b8b3da9cc75683542d6d08c1ab6d30e33acea961cc58c8609eb7ffb6c23e36d145c619f776e23e71acc7b",
+            "file": "src/app/features/analyst/sales-history/sales-history.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-sales-history",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./sales-history.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "chartOptions",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                },
+                {
+                    "name": "salesData",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                },
+                {
+                    "name": "tableColumns",
+                    "defaultValue": "[\r\n    { field: 'quarter', header: 'Trimestre' },\r\n    { field: 'totalSales', header: 'Ventas Totales ($)' },\r\n    { field: 'creditsSold', header: 'Créditos Vendidos' },\r\n    { field: 'status', header: 'Estado' }\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 24
+                },
+                {
+                    "name": "tableData",
+                    "defaultValue": "[\r\n    { quarter: 'Q1', totalSales: 1500000, creditsSold: 120, status: 'Completado' },\r\n    { quarter: 'Q2', totalSales: 2100000, creditsSold: 185, status: 'Completado' },\r\n    { quarter: 'Q3', totalSales: 1800000, creditsSold: 150, status: 'En Proceso' }\r\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ChartComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CardComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "TableComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { ChartComponent } from '../../../charts/chart/chart';\r\nimport { CardComponent } from '../../../data/card/card';\r\nimport { TableComponent } from '../../../data/table/table';\r\n\r\n@Component({\r\n  selector: 'app-sales-history',\r\n  standalone: true,\r\n  imports: [CommonModule, ChartComponent, CardComponent, TableComponent],\r\n  templateUrl: './sales-history.html',\r\n  styleUrl: './sales-history.scss'\r\n})\r\nexport class SalesHistoryComponent implements OnInit {\r\n  salesData: any;\r\n  chartOptions: any;\r\n\r\n  tableData = [\r\n    { quarter: 'Q1', totalSales: 1500000, creditsSold: 120, status: 'Completado' },\r\n    { quarter: 'Q2', totalSales: 2100000, creditsSold: 185, status: 'Completado' },\r\n    { quarter: 'Q3', totalSales: 1800000, creditsSold: 150, status: 'En Proceso' }\r\n  ];\r\n\r\n  tableColumns = [\r\n    { field: 'quarter', header: 'Trimestre' },\r\n    { field: 'totalSales', header: 'Ventas Totales ($)' },\r\n    { field: 'creditsSold', header: 'Créditos Vendidos' },\r\n    { field: 'status', header: 'Estado' }\r\n  ];\r\n\r\n  ngOnInit() {\r\n    this.salesData = {\r\n      labels: ['Q1', 'Q2', 'Q3', 'Q4'],\r\n      datasets: [\r\n        {\r\n          label: 'Volumen de Ventas ($)',\r\n          backgroundColor: '#80B828', // Primary\r\n          data: [1500000, 2100000, 1800000, 0]\r\n        },\r\n        {\r\n          label: 'Objetivo',\r\n          backgroundColor: '#00693E', // Secondary\r\n          data: [1200000, 1500000, 1500000, 1500000]\r\n        }\r\n      ]\r\n    };\r\n\r\n    this.chartOptions = {\r\n      responsive: true,\r\n      maintainAspectRatio: false,\r\n      plugins: {\r\n        legend: {\r\n          position: 'top',\r\n        }\r\n      },\r\n      scales: {\r\n        y: {\r\n          beginAtZero: true\r\n        }\r\n      }\r\n    };\r\n  }\r\n}\r\n",
+            "styleUrl": "./sales-history.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"p-6\">\r\n    <div class=\"mb-6\">\r\n        <h1 class=\"text-3xl font-bold text-gray-900 mb-2\">Historial de Ventas</h1>\r\n        <p class=\"text-gray-500\">Resumen y métricas de carteras vendidas agrupadas por trimestre.</p>\r\n    </div>\r\n\r\n    <div class=\"grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8\">\r\n        <app-card header=\"Volumen de Ventas por Trimestre\">\r\n            <div style=\"height: 350px\">\r\n                <app-chart type=\"bar\" [data]=\"salesData\" [options]=\"chartOptions\"></app-chart>\r\n            </div>\r\n        </app-card>\r\n\r\n        <app-card header=\"Proporción de Carteras\">\r\n            <div style=\"height: 350px\" class=\"flex items-center justify-center\">\r\n                <!-- Mock donut chart for demonstration -->\r\n                <app-chart type=\"doughnut\" [data]=\"{\r\n          labels: ['Vendidos', 'Descartados', 'En Venta'],\r\n          datasets: [{\r\n            data: [65, 10, 25],\r\n            backgroundColor: ['#80B828', '#D32F2F', '#FBC02D']\r\n          }]\r\n        }\" [options]=\"{ responsive: true, maintainAspectRatio: false }\"></app-chart>\r\n            </div>\r\n        </app-card>\r\n    </div>\r\n\r\n    <app-card header=\"Reporte Detallado\">\r\n        <app-table [data]=\"tableData\" [columns]=\"tableColumns\" [paginator]=\"false\">\r\n        </app-table>\r\n    </app-card>\r\n</div>"
+        },
+        {
+            "name": "SidebarComponent",
+            "id": "component-SidebarComponent-80aaeee7b8d7ed6427f00f53a8ecf3a9479597f7c64eb518e228541219153b2a1892c75980c2d7ecf20ca6c0d4c268d770fe90d498efa630b6884657b229a2b8",
+            "file": "src/app/layout/sidebar/sidebar.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-sidebar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./sidebar.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "header",
+                    "defaultValue": "'Menu'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "position",
+                    "defaultValue": "'left'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "\"left\" | \"right\" | \"top\" | \"bottom\" | \"full\"",
+                    "decorators": []
+                },
+                {
+                    "name": "visible",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "visibleChange",
+                    "defaultValue": "new EventEmitter<boolean>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onHide",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "DrawerModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { DrawerModule } from 'primeng/drawer';\r\n\r\n@Component({\r\n  selector: 'app-sidebar',\r\n  standalone: true,\r\n  imports: [CommonModule, DrawerModule],\r\n  templateUrl: './sidebar.html',\r\n  styleUrl: './sidebar.scss'\r\n})\r\nexport class SidebarComponent {\r\n  @Input() visible: boolean = false;\r\n  @Input() header: string = 'Menu';\r\n  @Input() position: 'left' | 'right' | 'top' | 'bottom' | 'full' = 'left';\r\n\r\n  @Output() visibleChange = new EventEmitter<boolean>();\r\n\r\n  onHide() {\r\n    this.visible = false;\r\n    this.visibleChange.emit(this.visible);\r\n  }\r\n}\r\n",
+            "styleUrl": "./sidebar.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p-drawer [(visible)]=\"visible\" (onHide)=\"onHide()\" [header]=\"header\" [position]=\"position\">\r\n    <div class=\"flex flex-col gap-4 mt-4\">\r\n        <ng-content></ng-content>\r\n    </div>\r\n</p-drawer>"
+        },
+        {
+            "name": "TableComponent",
+            "id": "component-TableComponent-f1e88b7eae652f7f3628e6c83c43644a254f4799431e39eae23261531834cff426bd9da37791adc9e7c0adad05c51698cde13f319d1513600dea7080e6d2c2a7",
+            "file": "src/app/data/table/table.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-table",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./table.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "columns",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "literal type[]",
+                    "decorators": []
+                },
+                {
+                    "name": "data",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "any[]",
+                    "decorators": []
+                },
+                {
+                    "name": "paginator",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "rows",
+                    "defaultValue": "10",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "selectionMode",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "\"single\" | \"multiple\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onRowSelect",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onRowUnselect",
+                    "defaultValue": "new EventEmitter<any>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "handleRowSelect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "handleRowUnselect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "optional": false,
+                            "dotDotDotToken": false,
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "TableModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter, TemplateRef, ContentChild } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { TableModule } from 'primeng/table';\r\n\r\n@Component({\r\n  selector: 'app-table',\r\n  standalone: true,\r\n  imports: [CommonModule, TableModule],\r\n  templateUrl: './table.html',\r\n  styleUrl: './table.scss',\r\n})\r\nexport class TableComponent {\r\n  @Input() data: any[] = [];\r\n  @Input() columns: { field: string, header: string }[] = [];\r\n  @Input() rows: number = 10;\r\n  @Input() paginator: boolean = true;\r\n  @Input() selectionMode?: 'single' | 'multiple';\r\n\r\n  @Output() onRowSelect = new EventEmitter<any>();\r\n  @Output() onRowUnselect = new EventEmitter<any>();\r\n\r\n  handleRowSelect(event: any) {\r\n    this.onRowSelect.emit(event);\r\n  }\r\n\r\n  handleRowUnselect(event: any) {\r\n    this.onRowUnselect.emit(event);\r\n  }\r\n}\r\n",
+            "styleUrl": "./table.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p-table [value]=\"data\" [paginator]=\"paginator\" [rows]=\"rows\" [selectionMode]=\"selectionMode\"\r\n    (onRowSelect)=\"handleRowSelect($event)\" (onRowUnselect)=\"handleRowUnselect($event)\">\r\n    <ng-template pTemplate=\"header\">\r\n        <tr>\r\n            <th *ngFor=\"let col of columns\">\r\n                {{ col.header }}\r\n            </th>\r\n        </tr>\r\n    </ng-template>\r\n    <ng-template pTemplate=\"body\" let-rowData>\r\n        <tr [pSelectableRow]=\"rowData\">\r\n            <td *ngFor=\"let col of columns\">\r\n                {{ rowData[col.field] }}\r\n            </td>\r\n        </tr>\r\n    </ng-template>\r\n</p-table>"
+        },
+        {
+            "name": "TagComponent",
+            "id": "component-TagComponent-3daf4761e794665b3899e9285e52fcc6aa96c3c0ea43fb55e182e86c2023808435d823afd6d685f94a5665176379519238b637085dcd7a0588605ef89611fe7d",
+            "file": "src/app/core/tag/tag.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tag",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./tag.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "icon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "rounded",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "severity",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "\"success\" | \"info\" | \"warn\" | \"danger\" | \"contrast\" | \"secondary\"",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "TagModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\r\nimport { TagModule } from 'primeng/tag';\r\nimport { CommonModule } from '@angular/common';\r\n\r\n@Component({\r\n  selector: 'app-tag',\r\n  standalone: true,\r\n  imports: [CommonModule, TagModule],\r\n  templateUrl: './tag.html',\r\n  styleUrl: './tag.scss'\r\n})\r\nexport class TagComponent {\r\n  @Input() value?: string;\r\n  @Input() severity?: 'success' | 'info' | 'warn' | 'danger' | 'contrast' | 'secondary';\r\n  @Input() rounded: boolean = false;\r\n  @Input() icon?: string;\r\n}\r\n",
+            "styleUrl": "./tag.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p-tag [value]=\"value\" [severity]=\"severity\" [rounded]=\"rounded\" [icon]=\"icon\">\r\n</p-tag>"
+        },
+        {
+            "name": "TopbarComponent",
+            "id": "component-TopbarComponent-43997d8afa5389b964eb186c9eedadc8736886affdb986afd80aa04909353ed823618b52e0e239c265e74f994d8197ec34bf9fcfb690a15423f710230669c059",
+            "file": "src/app/layout/topbar/topbar.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-topbar",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./topbar.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'Venta de Cartera'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "userName",
+                    "defaultValue": "'User'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onMenuToggle",
+                    "defaultValue": "new EventEmitter<void>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "toggleMenu",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ToolbarModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ButtonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\r\nimport { CommonModule } from '@angular/common';\r\nimport { ToolbarModule } from 'primeng/toolbar';\r\nimport { ButtonModule } from 'primeng/button';\r\n\r\n@Component({\r\n  selector: 'app-topbar',\r\n  standalone: true,\r\n  imports: [CommonModule, ToolbarModule, ButtonModule],\r\n  templateUrl: './topbar.html',\r\n  styleUrl: './topbar.scss'\r\n})\r\nexport class TopbarComponent {\r\n  @Input() title: string = 'Venta de Cartera';\r\n  @Input() userName: string = 'User';\r\n\r\n  @Output() onMenuToggle = new EventEmitter<void>();\r\n\r\n  toggleMenu() {\r\n    this.onMenuToggle.emit();\r\n  }\r\n}\r\n",
+            "styleUrl": "./topbar.scss",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<p-toolbar styleClass=\"shadow-sm\">\r\n    <ng-template pTemplate=\"start\">\r\n        <p-button icon=\"pi pi-bars\" class=\"mr-4\" severity=\"secondary\" [text]=\"true\" (onClick)=\"toggleMenu()\">\r\n        </p-button>\r\n        <div class=\"font-bold text-xl text-primary\">{{ title }}</div>\r\n    </ng-template>\r\n\r\n    <ng-template pTemplate=\"end\">\r\n        <div class=\"flex items-center gap-2\">\r\n            <span class=\"font-medium mr-2\">{{ userName }}</span>\r\n            <p-button icon=\"pi pi-user\" [rounded]=\"true\" severity=\"secondary\"></p-button>\r\n        </div>\r\n    </ng-template>\r\n</p-toolbar>"
+        }
+    ],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "appConfig",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "ApplicationConfig",
+                "defaultValue": "{\r\n  providers: [\r\n    provideBrowserGlobalErrorListeners(),\r\n    provideZoneChangeDetection({ eventCoalescing: true }),\r\n    provideRouter(routes),\r\n    provideAnimationsAsync(),\r\n    providePrimeNG({\r\n      theme: {\r\n        preset: MyPreset,\r\n        options: {\r\n          darkModeSelector: '.my-app-dark'\r\n        }\r\n      }\r\n    })\r\n  ]\r\n}"
+            },
+            {
+                "name": "MyPreset",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.config.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "unknown",
+                "defaultValue": "definePreset(Aura, {\r\n  semantic: {\r\n    primary: {\r\n      50: '#f2f8e9',\r\n      100: '#e0efcc',\r\n      200: '#cce5ab',\r\n      300: '#b6db86',\r\n      400: '#a3d266',\r\n      500: '#80B828', // Primary requested by user\r\n      600: '#73a524',\r\n      700: '#649020',\r\n      800: '#567c1c',\r\n      900: '#486716',\r\n      950: '#2e430d'\r\n    }\r\n  }\r\n})"
+            },
+            {
+                "name": "routes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/app.routes.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Routes",
+                "defaultValue": "[\r\n    { path: '', redirectTo: 'analyst/credit-upload', pathMatch: 'full' },\r\n    {\r\n        path: 'analyst',\r\n        children: [\r\n            { path: 'credit-upload', loadComponent: () => \"import('./features/analyst/credit-upload/credit-upload').then(c => c.CreditUploadComponent)\" },\r\n            { path: 'sales-history', loadComponent: () => \"import('./features/analyst/sales-history/sales-history').then(c => c.SalesHistoryComponent)\" },\r\n            { path: 'discarded-credits', loadComponent: () => \"import('./features/analyst/discarded-credits/discarded-credits').then(c => c.DiscardedCreditsComponent)\" }\r\n        ]\r\n    },\r\n    {\r\n        path: 'investor',\r\n        children: [\r\n            { path: 'marketplace', loadComponent: () => \"import('./features/investor/marketplace/marketplace').then(c => c.MarketplaceComponent)\" },\r\n            { path: 'purchase-selection', loadComponent: () => \"import('./features/investor/purchase-selection/purchase-selection').then(c => c.PurchaseSelectionComponent)\" },\r\n            { path: 'purchased-portfolio', loadComponent: () => \"import('./features/investor/purchased-portfolio/purchased-portfolio').then(c => c.PurchasedPortfolioComponent)\" }\r\n        ]\r\n    }\r\n]"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/app.config.ts": [
+                {
+                    "name": "appConfig",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ApplicationConfig",
+                    "defaultValue": "{\r\n  providers: [\r\n    provideBrowserGlobalErrorListeners(),\r\n    provideZoneChangeDetection({ eventCoalescing: true }),\r\n    provideRouter(routes),\r\n    provideAnimationsAsync(),\r\n    providePrimeNG({\r\n      theme: {\r\n        preset: MyPreset,\r\n        options: {\r\n          darkModeSelector: '.my-app-dark'\r\n        }\r\n      }\r\n    })\r\n  ]\r\n}"
+                },
+                {
+                    "name": "MyPreset",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.config.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "unknown",
+                    "defaultValue": "definePreset(Aura, {\r\n  semantic: {\r\n    primary: {\r\n      50: '#f2f8e9',\r\n      100: '#e0efcc',\r\n      200: '#cce5ab',\r\n      300: '#b6db86',\r\n      400: '#a3d266',\r\n      500: '#80B828', // Primary requested by user\r\n      600: '#73a524',\r\n      700: '#649020',\r\n      800: '#567c1c',\r\n      900: '#486716',\r\n      950: '#2e430d'\r\n    }\r\n  }\r\n})"
+                }
+            ],
+            "src/app/app.routes.ts": [
+                {
+                    "name": "routes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/app.routes.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Routes",
+                    "defaultValue": "[\r\n    { path: '', redirectTo: 'analyst/credit-upload', pathMatch: 'full' },\r\n    {\r\n        path: 'analyst',\r\n        children: [\r\n            { path: 'credit-upload', loadComponent: () => \"import('./features/analyst/credit-upload/credit-upload').then(c => c.CreditUploadComponent)\" },\r\n            { path: 'sales-history', loadComponent: () => \"import('./features/analyst/sales-history/sales-history').then(c => c.SalesHistoryComponent)\" },\r\n            { path: 'discarded-credits', loadComponent: () => \"import('./features/analyst/discarded-credits/discarded-credits').then(c => c.DiscardedCreditsComponent)\" }\r\n        ]\r\n    },\r\n    {\r\n        path: 'investor',\r\n        children: [\r\n            { path: 'marketplace', loadComponent: () => \"import('./features/investor/marketplace/marketplace').then(c => c.MarketplaceComponent)\" },\r\n            { path: 'purchase-selection', loadComponent: () => \"import('./features/investor/purchase-selection/purchase-selection').then(c => c.PurchaseSelectionComponent)\" },\r\n            { path: 'purchased-portfolio', loadComponent: () => \"import('./features/investor/purchased-portfolio/purchased-portfolio').then(c => c.PurchasedPortfolioComponent)\" }\r\n        ]\r\n    }\r\n]"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "children": [
+            {
+                "name": "analyst",
+                "kind": "route-path",
+                "filename": "src/app/app.routes.ts"
+            },
+            {
+                "name": "credit-upload",
+                "kind": "route-path",
+                "filename": "src/app/app.routes.ts"
+            },
+            {
+                "name": "sales-history",
+                "kind": "route-path",
+                "filename": "src/app/app.routes.ts"
+            },
+            {
+                "name": "discarded-credits",
+                "kind": "route-path",
+                "filename": "src/app/app.routes.ts"
+            },
+            {
+                "name": "investor",
+                "kind": "route-path",
+                "filename": "src/app/app.routes.ts"
+            },
+            {
+                "name": "marketplace",
+                "kind": "route-path",
+                "filename": "src/app/app.routes.ts"
+            },
+            {
+                "name": "purchase-selection",
+                "kind": "route-path",
+                "filename": "src/app/app.routes.ts"
+            },
+            {
+                "name": "purchased-portfolio",
+                "kind": "route-path",
+                "filename": "src/app/app.routes.ts"
+            },
+            {
+                "name": "analyst/credit-upload",
+                "kind": "route-redirect",
+                "filename": "src/app/app.routes.ts"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 3,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "appConfig",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.config.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "MyPreset",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.routes.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "routes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/app.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "App",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/charts/chart/chart.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ChartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/badge/badge.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "BadgeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/button/button.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/tag/tag.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TagComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/data/card/card.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/data/table/table.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TableComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/analyst/credit-upload/credit-upload.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CreditUploadComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/analyst/discarded-credits/discarded-credits.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DiscardedCreditsComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/analyst/sales-history/sales-history.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SalesHistoryComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/investor/marketplace/marketplace.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "MarketplaceComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/investor/purchase-selection/purchase-selection.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PurchaseSelectionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/features/investor/purchased-portfolio/purchased-portfolio.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PurchasedPortfolioComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/forms/dropdown/dropdown.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DropdownComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/14",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/forms/file-upload/file-upload.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FileUploadComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/13",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/forms/input-text/input-text.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InputTextComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layout/sidebar/sidebar.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SidebarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/layout/topbar/topbar.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TopbarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/user.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "User",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            }
+        ]
+    }
+}

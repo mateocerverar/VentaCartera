@@ -1,0 +1,75 @@
+<div class="p-6">
+    <div class="mb-6 flex justify-between items-center">
+        <div>
+            <h1 class="text-3xl font-bold text-gray-900 mb-2">Mi Portafolio</h1>
+            <p class="text-gray-500">Rendimiento y estado actual de los créditos adquiridos.</p>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+        <app-card>
+            <div class="flex items-center gap-4">
+                <div class="bg-blue-100 text-blue-600 p-4 rounded-xl">
+                    <i class="pi pi-wallet text-3xl"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500 font-semibold uppercase tracking-wider">Total Invertido</p>
+                    <p class="text-3xl font-bold text-gray-900">$130,000.00</p>
+                </div>
+            </div>
+        </app-card>
+
+        <app-card>
+            <div class="flex items-center gap-4">
+                <div class="bg-green-100 text-green-600 p-4 rounded-xl">
+                    <i class="pi pi-chart-line text-3xl"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-gray-500 font-semibold uppercase tracking-wider">Retorno Actual</p>
+                    <p class="text-3xl font-bold text-green-600">+$3,750.00</p>
+                </div>
+            </div>
+        </app-card>
+    </div>
+
+    <app-card header="Evolución del Rendimiento" class="mb-8 block">
+        <div style="height: auto; min-height: 350px;">
+            <app-chart type="line" [data]="performanceData" [options]="chartOptions"></app-chart>
+        </div>
+    </app-card>
+
+    <app-card>
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-xl font-bold text-gray-900">Desglose de Créditos Activos</h2>
+            <p-select [options]="years" [(ngModel)]="selectedYear" placeholder="Seleccionar Año" optionLabel="label"
+                optionValue="value"></p-select>
+        </div>
+
+        <p-tabs value="0">
+            <p-tablist>
+                <p-tab value="0">Q1 (Ene - Mar)</p-tab>
+                <p-tab value="1">Q2 (Abr - Jun)</p-tab>
+                <p-tab value="2">Q3 (Jul - Sep)</p-tab>
+                <p-tab value="3">Q4 (Oct - Dic)</p-tab>
+            </p-tablist>
+            <p-tabpanels>
+                <p-tabpanel value="0">
+                    <app-table [data]="portfolioTable" [columns]="tableColumns" [paginator]="true"
+                        [rows]="5"></app-table>
+                </p-tabpanel>
+                <p-tabpanel value="1">
+                    <div class="p-4 text-center text-gray-500 border-2 border-dashed rounded-lg">No hay registros para
+                        este trimestre.</div>
+                </p-tabpanel>
+                <p-tabpanel value="2">
+                    <div class="p-4 text-center text-gray-500 border-2 border-dashed rounded-lg">No hay registros para
+                        este trimestre.</div>
+                </p-tabpanel>
+                <p-tabpanel value="3">
+                    <div class="p-4 text-center text-gray-500 border-2 border-dashed rounded-lg">No hay registros para
+                        este trimestre.</div>
+                </p-tabpanel>
+            </p-tabpanels>
+        </p-tabs>
+    </app-card>
+</div>

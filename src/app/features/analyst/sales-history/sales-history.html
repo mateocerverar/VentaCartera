@@ -1,0 +1,36 @@
+<div class="p-6">
+    <div class="mb-6">
+        <h1 class="text-3xl font-bold text-gray-900 mb-2">Historial de Ventas</h1>
+        <p class="text-gray-500">Resumen y métricas de carteras vendidas agrupadas por trimestre.</p>
+    </div>
+
+    <div class="grid mb-4">
+        <div class="col-12 lg:col-6">
+            <app-card header="Volumen de Ventas por Trimestre" styleClass="h-full">
+                <div style="height: 300px">
+                    <app-chart type="bar" [data]="salesData" [options]="chartOptions"></app-chart>
+                </div>
+            </app-card>
+        </div>
+
+        <div class="col-12 lg:col-6">
+            <app-card header="Proporción de Carteras" styleClass="h-full">
+                <div style="height: 300px" class="flex items-center justify-content-center">
+                    <!-- Mock donut chart for demonstration -->
+                    <app-chart type="doughnut" [data]="{
+              labels: ['Vendidos', 'Descartados', 'En Venta'],
+              datasets: [{
+                data: [65, 10, 25],
+                backgroundColor: ['#80B828', '#D32F2F', '#FBC02D']
+              }]
+            }" [options]="{ responsive: true, maintainAspectRatio: false }"></app-chart>
+                </div>
+            </app-card>
+        </div>
+    </div>
+
+    <app-card header="Reporte Detallado">
+        <app-table [data]="tableData" [columns]="tableColumns" [paginator]="false">
+        </app-table>
+    </app-card>
+</div>
