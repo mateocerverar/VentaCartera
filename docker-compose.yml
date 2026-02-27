@@ -1,0 +1,26 @@
+services:
+  bonita-studio-env:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: bonita_studio_webtop
+    # Necesario para el correcto renderizado de ventanas del IDE en el navegador
+    security_opt:
+      - seccomp:unconfined 
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=America/Bogota
+      - TITLE=Bonita Studio Workspace
+    ports:
+      # Puerto para acceder al escritorio Linux vía Web
+      - "3000:3000" 
+    volumes:
+      # Carpeta local para guardar tus diagramas, archivos .bar y descargas
+      - ./workspace:/config 
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          # Bonita Studio (basado en Eclipse) es pesado, requiere al menos 4GB
+          memory: 4G
